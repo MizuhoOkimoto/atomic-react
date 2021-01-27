@@ -157,6 +157,14 @@ $atomic-default: (
   "select": (
     "border-color--focus": map-get($cisco-blue, "base")
   ),
+  "stepper": (
+    "icon-bg": $white,
+    "icon-bg-visited": $white,
+    "icon-border-color": map-get($grey, "lighten-2"),
+    "icon-color": map-get($grey, "darken-4"),
+    "icon-color-visited": map-get($grey, "darken-4"),
+    "line-color": map-get($grey, "lighten-2")
+  ),
   "slider": (
     "opacity-disabled": 1,
     "selection-bg-disabled": map-get($grey, "lighten-2"),

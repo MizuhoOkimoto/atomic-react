@@ -167,6 +167,14 @@ $atomic-dusk: (
   "select": (
     "border-color--focus": map-get($cisco-blue, "burnt-1")
   ),
+  "stepper": (
+    "icon-bg": transparent,
+    "icon-bg-visited": transparent,
+    "icon-border-color": rgba(map-get($grey, "lighten-2"), $alpha-3),
+    "icon-color": map-get($grey, "lighten-5"),
+    "icon-color-visited": map-get($grey, "lighten-5"),
+    "line-color": rgba(map-get($grey, "lighten-2"), $alpha-3)
+  ),
   "slider": (
     "opacity-disabled": $alpha-3,
     "selection-bg-disabled": map-get($cisco-blue, "base"),

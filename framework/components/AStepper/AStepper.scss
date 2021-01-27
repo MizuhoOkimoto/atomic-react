@@ -1,0 +1,155 @@
+@import "../../styles";
+
+@include theme(a-stepper) using ($theme) {
+  .step {
+    &__icon {
+      background: map-deep-get($theme, "stepper", "icon-bg");
+      color: map-deep-get($theme, "stepper", "icon-color");
+      border: $border-width solid
+        map-deep-get($theme, "stepper", "icon-border-color");
+      .icon-checkmark {
+        color: $color-good;
+      }
+    }
+    &__label {
+      color: map-deep-get($theme, "base", "color");
+    }
+    &__title {
+      background: map-deep-get($theme, "base", "bg");
+    }
+    &__hint {
+      color: map-get($grey, "base");
+    }
+
+    &.active {
+      .step__icon {
+        background: map-deep-get($theme, "base", "color--selected");
+        color: map-deep-get($theme, "base", "inverse-color");
+        border: $border-width solid
+          map-deep-get($theme, "base", "color--selected");
+      }
+    }
+
+    &.visited {
+      .step__icon {
+        background: map-deep-get($theme, "stepper", "icon-bg-visited");
+        color: map-deep-get($theme, "stepper", "icon-color-visited");
+        border: $border-width solid $color-good;
+      }
+    }
+    &.visited {
+      &:before {
+        background: $color-good;
+      }
+    }
+    &:before {
+      background: map-deep-get($theme, "stepper", "line-color");
+    }
+  }
+  &--orientation-vertical {
+    .step {
+      &.visited {
+        &:after {
+          background-color: $color-good;
+        }
+      }
+      &:after {
+        background-color: map-deep-get($theme, "stepper", "line-color");
+      }
+    }
+  }
+}
+
+.a-stepper {
+  display: flex;
+  flex: 1;
+  align-items: top;
+  justify-content: space-around;
+  max-width: 1000px;
+  margin: 0 auto 20px;
+  padding: 20px 0;
+  text-align: center;
+  .step {
+    position: relative;
+    display: inline-flex;
+    flex: 1;
+    &__icon {
+      width: 24px;
+      min-width: 24px;
+      max-width: 24px;
+      height: 24px;
+      line-height: $line-height--lg;
+      font-size: $font-size--xs;
+      margin: 10px;
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    &__content {
+      width: 100%;
+      text-align: left;
+      margin: 12px 0 0;
+    }
+    &__label {
+      font-size: $font-size--sm;
+    }
+    &__title {
+      padding: 0 10px 0 0;
+    }
+    &__hint {
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+    &:last-child {
+      &:before {
+        display: none;
+      }
+    }
+    &:before {
+      top: 22px;
+      display: block;
+      position: absolute;
+      content: "";
+      width: calc(100% - 44px);
+      height: 1px;
+      left: 44px;
+      z-index: -1;
+    }
+  }
+  &--orientation-vertical {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    text-align: left;
+    .step {
+      display: flex;
+      .step__icon {
+        flex: 1;
+      }
+      &__content {
+        flex: 2;
+        align-self: center;
+      }
+      &:before {
+        display: none;
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: calc(100% - 40px);
+        left: 22px;
+        top: 44px;
+      }
+    }
+  }
+}

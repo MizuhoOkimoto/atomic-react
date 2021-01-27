@@ -1,0 +1,37 @@
+---
+name: Steppers
+route: /components/stepper
+components: AStepper
+---
+
+import {Playground, Props} from "../../../docs";
+
+# Stepper
+
+## Install
+
+Integrate with your build to [auto-import](/#integrating), or add an import in your component:
+
+```
+import AStepper from "@cisco-ats/atomic-react/AStepper";
+// or if you're able to treekshake node_modules
+import {AStepper} from "@cisco-ats/atomic-react";
+```
+
+## Usage
+
+<Playground
+  code={`() => {
+  const [date, setDate] = useState(new Date(2021, 0, 14));
+  return (
+    <ADatePicker value={date} onChange={(date) => setDate(date)} />
+  );
+}
+`}
+/>
+
+## Stepper Props
+
+The `AStepper` component inherits passed props.
+
+<Props of="AStepper" />
