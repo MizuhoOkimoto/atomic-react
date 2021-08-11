@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
-import {Link} from "gatsby";
+import Link from "next/link";
 
 import AButton from "../framework/components/AButton";
 import AIcon from "../framework/components/AIcon";

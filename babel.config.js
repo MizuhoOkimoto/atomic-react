@@ -2,7 +2,7 @@ const nodeEnv = process.env.NODE_ENV;
 const env = process.env.BABEL_ENV;
 
 let config = {
-  presets: ["babel-preset-gatsby"],
+  presets: ["next/babel"],
   plugins: []
 };
 
@@ -19,16 +19,6 @@ if (["lib"].includes(env)) {
   config = {
     presets: ["@babel/preset-react", ["@babel/preset-env", {modules: false}]],
     ignore: [/\.spec\.js$/]
-  };
-}
-
-if (["lib-demo"].includes(env)) {
-  config = {
-    presets: [
-      "@babel/preset-env",
-      "@babel/preset-react",
-      "./babel-preset-local.js"
-    ]
   };
 }
 

@@ -15,6 +15,7 @@
   },
   "globals": {
     "module": true,
+    "process": true,
     "require": true,
     "Buffer": true,
     "__dirname": true

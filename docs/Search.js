@@ -1,5 +1,5 @@
 import algoliasearch from "algoliasearch";
-import {Link} from "gatsby";
+import Link from "next/link";
 import debounce from "lodash.debounce";
 import React, {useCallback, useEffect, useRef, useState} from "react";
 
